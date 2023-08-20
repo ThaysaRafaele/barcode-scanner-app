@@ -7,8 +7,8 @@ export const BarcodeScannerContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: auto;
-  max-width: 360px; /* Define o tamanho máximo do scanner */
-  height: 480px; /* Altura fixa para o scanner */
+  max-width: 360px; 
+  height: 480px; 
   margin: 0 auto;
   padding: 16px;
   background-color: #f5f5f5;

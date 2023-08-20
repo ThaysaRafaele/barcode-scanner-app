@@ -2,18 +2,18 @@ import styled from 'styled-components';
 
 export const BottomMenuContainer = styled.div`
   position: fixed;
-  bottom: 16px; /* Space from the bottom of the viewport */
+  bottom: 16px; 
   left: 50%;
-  transform: translateX(-50%); /* Center horizontally */
-  width: 90%; /* Use a percentage for responsiveness */
-  max-width: 400px; /* Set a maximum width for larger screens */
+  transform: translateX(-50%); 
+  width: 90%; 
+  max-width: 400px; 
   display: flex;
   justify-content: space-around;
   background-color: #ffffff;
   border-top: 1px solid #e0e0e0;
   border-radius: 50px;
   border: 1px solid #2C3092;
-  padding: 8px; /* Add some padding for better spacing */
+  padding: 8px; 
 `;
 
 export const BottomMenuItem = styled.div`
