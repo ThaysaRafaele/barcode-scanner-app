@@ -5,12 +5,16 @@ import { BarcodeScannerContainer, EnterBarcodeButton } from './styles';
 import Header from '../Header/index';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import ProductSearchPage from '../ProductSearchPage';
 
 const BarcodeScanner = ({ onBarcodeDetected }: any) => {
   const scannerRef = useRef(null);
   const [isScannerActive, setIsScannerActive] = useState(false);
 
   const navigate = useNavigate();
+
+  
+  const [showProductSearch, setShowProductSearch] = useState(false);
 
   useEffect(() => {
     let scannerInstance: any;
@@ -81,12 +85,14 @@ const BarcodeScanner = ({ onBarcodeDetected }: any) => {
 
   const handleEnterBarcodeClick = () => {
     setIsScannerActive(false); 
-    navigate('/product-search'); 
+    // navigate('/product-search'); 
+    setShowProductSearch(true);
   };
 
   return (
     <>
-      <Header />
+    <Header />
+    {!showProductSearch && 
       <BarcodeScannerContainer>
         {isScannerActive ? (
           <div ref={scannerRef}>
@@ -99,7 +105,9 @@ const BarcodeScanner = ({ onBarcodeDetected }: any) => {
           Digitar código de barras
         </EnterBarcodeButton>
         <BottomMenu />
-      </BarcodeScannerContainer>
+      </BarcodeScannerContainer>}
+
+      {showProductSearch && <ProductSearchPage />}
     </>
   );
 };

@@ -29,7 +29,7 @@ const App = () => {
   return (
     <div className="App">
       {isLoggedIn ? (
-        <BarcodeScanner />
+        <BarcodeScanner onBarcodeDetected={handleBarcodeDetected} />
       ) : (
         <Login onLogin={handleLogin} />
       )}

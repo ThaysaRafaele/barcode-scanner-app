@@ -8,12 +8,11 @@ const ProductSearchPage = () => {
 
   const handleSearch = () => {
     // Lógica para realizar a busca do produto usando o código de barras (barcode)
-    // Você pode navegar para outra página ou executar outras ações aqui
   };
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <ProductSearchContainer>
         <SearchInput
           type="text"
