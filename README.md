@@ -1,4 +1,4 @@
-# Documentação do Aplicativo "PayNoContact"
+# Documentação do Aplicativo "PayNoContact" - Front
 
 ## Visão Geral
 O aplicativo "PayNoContact" é uma plataforma que permite aos usuários uma experiência para comprar sem precisar ter contato com funcionários, e saber em tempo real o valor de sua compra. Ao ler o código e adicionar os produtos diretamente ao seu carrinho, e no final da compra apenas fazer conferencia dos itens e empacotamento para então finalizar o pagamento.
@@ -10,6 +10,7 @@ Por enquanto temos
 * listagem de produto fictício, 
 * tela para busca de produtos inserindo código de barras manualmente.
 
+![app-hacka](https://github.com/ThaysaRafaele/barcode-scanner-app/assets/83955839/0709ba91-3d89-4b13-9419-72f37e09c4e4)
 
 ## Uso
 1. Inicie o aplicativo pela url https://barcode-scanner-app-f4ts.vercel.app/
