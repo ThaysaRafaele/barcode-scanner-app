@@ -44,7 +44,9 @@ const BarcodeScanner = ({ onBarcodeDetected }: any) => {
           scannerInstance = Quagga.start();
 
           Quagga.onDetected((data: any) => {
+            console.log(data);
             const barcode = data.codeResult.code;
+            console.log(barcode);
             onBarcodeDetected(barcode);
             Quagga.stop(); 
             setIsScannerActive(false); 

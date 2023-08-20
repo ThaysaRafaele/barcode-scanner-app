@@ -19,7 +19,7 @@ export const BarcodeScannerContainer = styled.div`
 
 export const EnterBarcodeButton = styled.button`
   position: fixed;
-  bottom: 20%;
+  bottom: 25%;
   width: 320px;
   height: 48.02px;
   border-radius: 50px;

@@ -33,6 +33,7 @@ export const BottomMenuItem = styled.div`
 
 export const BottomMenuText = styled.span`
   font-size: 12px;
+  color: #2C3092;
 `;
 
 /* Add a media query for responsiveness */
