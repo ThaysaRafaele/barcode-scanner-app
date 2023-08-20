@@ -3,10 +3,13 @@ import Quagga from 'quagga';
 import BottomMenu from '../BottomMenu';
 import { BarcodeScannerContainer, EnterBarcodeButton } from './styles';
 import Header from '../Header/index';
+import { useNavigate } from 'react-router-dom';
 
 const BarcodeScanner = ({ onBarcodeDetected }: any) => {
   const scannerRef = useRef(null);
   const [isScannerActive, setIsScannerActive] = useState(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     let scannerInstance: any;
@@ -59,6 +62,11 @@ const BarcodeScanner = ({ onBarcodeDetected }: any) => {
     };
   }, [isScannerActive, onBarcodeDetected]);
 
+  const handleEnterBarcodeClick = () => {
+    setIsScannerActive(false); 
+    navigate('/product-search'); 
+  };
+
   return (
     <>
       <Header />
@@ -70,7 +78,7 @@ const BarcodeScanner = ({ onBarcodeDetected }: any) => {
         ) : (
           <button onClick={() => setIsScannerActive(true)}>Start Scanner</button>
         )}
-        <EnterBarcodeButton onClick={() => setIsScannerActive(false)}>
+        <EnterBarcodeButton onClick={handleEnterBarcodeClick}>
           Digitar código de barras
         </EnterBarcodeButton>
         <BottomMenu />
