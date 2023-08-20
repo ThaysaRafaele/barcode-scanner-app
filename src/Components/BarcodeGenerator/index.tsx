@@ -4,6 +4,7 @@ import BottomMenu from '../BottomMenu';
 import { BarcodeScannerContainer, EnterBarcodeButton } from './styles';
 import Header from '../Header/index';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const BarcodeScanner = ({ onBarcodeDetected }: any) => {
   const scannerRef = useRef(null);
@@ -43,13 +44,27 @@ const BarcodeScanner = ({ onBarcodeDetected }: any) => {
           }
           scannerInstance = Quagga.start();
 
-          Quagga.onDetected((data: any) => {
+          Quagga.onDetected(async (data: any) => {
             console.log(data);
+
             const barcode = data.codeResult.code;
+
             console.log(barcode);
+
             onBarcodeDetected(barcode);
             Quagga.stop(); 
             setIsScannerActive(false); 
+
+            // try {
+            //   const response = await axios.get(`http://localhost:5000/products/7897312400184`);
+            //   const productData = response.data.products[barcode];
+            //   console.log(productData);
+            
+            //   console.log(productData);
+            // } catch (error) {
+            //   console.error('Erro ao buscar informações do produto:', error);
+            // }
+
           });
 
           return () => {

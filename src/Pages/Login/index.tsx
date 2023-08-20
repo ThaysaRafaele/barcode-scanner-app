@@ -8,8 +8,11 @@ import {
   LoginButton,
 } from './styles';
 import Header from '../../Components/Header';
+import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({ onLogin }: any) => {
+  const navigate = useNavigate();
+  
   const [cpf, setCpf] = useState('');
   const [password, setPassword] = useState('');
 
@@ -17,6 +20,11 @@ const Login = () => {
     if (value.length <= 3) return value;
     if (value.length <= 6) return `${value.slice(0, 3)}.${value.slice(3)}`;
     return `${value.slice(0, 3)}.${value.slice(3, 6)}.${value.slice(6, 9)}-${value.slice(9, 11)}`;
+  };
+
+  const handleLogin = () => {
+    console.log(onLogin);
+    onLogin();
   };
 
   return (
@@ -43,7 +51,7 @@ const Login = () => {
                   />
               </InputGroup>
               <ForgotPasswordLink href="#">Esqueci minha senha!</ForgotPasswordLink>
-              <LoginButton>Entrar</LoginButton>
+              <LoginButton onClick={handleLogin}>Entrar</LoginButton>
             </LoginForm>
         </LoginContainer>
     </>
