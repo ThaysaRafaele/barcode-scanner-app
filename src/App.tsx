@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import BarcodeScanner from './Components/BarcodeGenerator';
+import ProductInfo from './Components/ProductInfo';
 
-function App() {
+
+const App = () => {
+  const [product, setProduct] = useState<{ name: string; price: string } | null>(null);
+
+  const handleBarcodeDetected = (barcode: string) => {
+    const mockProduct = {
+      name: 'Sample Product',
+      price: '$9.99',
+    };
+    setProduct(mockProduct);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <BarcodeScanner onBarcodeDetected={handleBarcodeDetected} />
+      {product && <ProductInfo product={product} />}
     </div>
   );
-}
+};
 
 export default App;
