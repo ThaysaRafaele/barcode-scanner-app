@@ -18,7 +18,9 @@ Por enquanto temos
 4. a lista de produtos lidos deverá aparecer abaixo do leitor.
 
 ## Dependências
-- [Lista de bibliotecas externas ou serviços que o aplicativo depende]
+O arquvivo package.json contém várias informações sobre o projeto, incluindo:
+* Dependências (dependencies)
+* Dependências de Desenvolvimento (devDependencies)
 
 ## Configuração
 
@@ -63,8 +65,8 @@ Certifique-se de que qualquer arquivo de configuração necessário para o proje
 
 ### Rodando o Projeto:
 
-npm start
-yarn start
+npm start <br>
+ou yarn start
 
 
 ## Licença
