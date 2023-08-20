@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Quagga from 'quagga';
 import BottomMenu from '../BottomMenu';
-import { BarcodeScannerContainer } from './styles';
+import { BarcodeScannerContainer, EnterBarcodeButton } from './styles';
 import Header from '../Header/index';
 
 const BarcodeScanner = ({ onBarcodeDetected }: any) => {
@@ -70,6 +70,9 @@ const BarcodeScanner = ({ onBarcodeDetected }: any) => {
         ) : (
           <button onClick={() => setIsScannerActive(true)}>Start Scanner</button>
         )}
+        <EnterBarcodeButton onClick={() => setIsScannerActive(false)}>
+          Digitar código de barras
+        </EnterBarcodeButton>
         <BottomMenu />
       </BarcodeScannerContainer>
     </>
