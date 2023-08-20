@@ -6,13 +6,14 @@ import GroupIcon from '../../Assets/Group-icon.png';
 import ShoppingCartIcon from '../../Assets/Shopping-cart-icon.png';
 import QrCodeScannerIcon from '../../Assets/Qr-code-scanner-icon.png';
 import PersonIcon from '../../Assets/Person-icon.png';
+import { Link } from 'react-router-dom';
 
 const BottomMenu = () => {
   return (
     <BottomMenuContainer>
       <BottomMenuItem>
         <img src={Queue} alt="Fila" />
-        <BottomMenuText>Fila</BottomMenuText>
+        <BottomMenuText>Fila</BottomMenuText>        
       </BottomMenuItem>
       <BottomMenuItem>
         <img src={GroupIcon} alt="Grupos" />
@@ -23,8 +24,10 @@ const BottomMenu = () => {
         <BottomMenuText>Carrinho</BottomMenuText>
       </BottomMenuItem>
       <BottomMenuItem>
-        <img src={QrCodeScannerIcon} alt="Leitor" />
-        <BottomMenuText>Leitor</BottomMenuText>
+        {/* <Link to="/barcodeScanner"> */}
+          <img src={QrCodeScannerIcon} alt="Leitor" />
+          <BottomMenuText>Leitor</BottomMenuText>          
+        {/* </Link> */}
       </BottomMenuItem>
       <BottomMenuItem>
         <img src={PersonIcon} alt="Perfil" />

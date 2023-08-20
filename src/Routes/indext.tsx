@@ -9,7 +9,7 @@ const Routes = () => {
     <Router>
       <RouterRoutes>
         <Route path="/" element={<Login />} />
-        <Route path="/" element={<BarcodeScanner />} />
+        <Route path="/barcodeScanner" element={<BarcodeScanner />} />
         <Route path="/product-search" element={<ProductSearchPage />} />
       </RouterRoutes>
     </Router>

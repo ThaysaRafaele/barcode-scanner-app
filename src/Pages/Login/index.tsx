@@ -23,7 +23,6 @@ const Login = ({ onLogin }: any) => {
   };
 
   const handleLogin = () => {
-    console.log(onLogin);
     onLogin();
   };
 
