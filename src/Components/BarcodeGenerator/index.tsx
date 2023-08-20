@@ -6,13 +6,17 @@ import Header from '../Header/index';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import ProductSearchPage from '../ProductSearchPage';
+import ProductInfo from '../ProductInfo';
 
 const BarcodeScanner = ({ onBarcodeDetected }: any) => {
   const scannerRef = useRef(null);
   const [isScannerActive, setIsScannerActive] = useState(false);
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
+  // const [productInfo, setProductInfo] = useState(null);
+  
+  const [detectedProducts, setDetectedProducts] = useState<any[]>([]);
   
   const [showProductSearch, setShowProductSearch] = useState(false);
 
@@ -55,19 +59,16 @@ const BarcodeScanner = ({ onBarcodeDetected }: any) => {
 
             console.log(barcode);
 
+            const fakeProduct = {
+              name: 'Banana',
+              price: '$1.00',
+            };
+
             onBarcodeDetected(barcode);
             Quagga.stop(); 
             setIsScannerActive(false); 
 
-            // try {
-            //   const response = await axios.get(`http://localhost:5000/products/7897312400184`);
-            //   const productData = response.data.products[barcode];
-            //   console.log(productData);
-            
-            //   console.log(productData);
-            // } catch (error) {
-            //   console.error('Erro ao buscar informações do produto:', error);
-            // }
+            setDetectedProducts([fakeProduct]);
 
           });
 
@@ -104,6 +105,9 @@ const BarcodeScanner = ({ onBarcodeDetected }: any) => {
         <EnterBarcodeButton onClick={handleEnterBarcodeClick}>
           Digitar código de barras
         </EnterBarcodeButton>
+        {detectedProducts.map((product, index) => (
+          <ProductInfo key={index} product={product} />
+        ))}
         <BottomMenu />
       </BarcodeScannerContainer>}
 
