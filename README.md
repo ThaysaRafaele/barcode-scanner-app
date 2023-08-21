@@ -3,6 +3,8 @@
 ## Visão Geral
 O aplicativo "PayNoContact" é uma plataforma que permite aos usuários uma experiência para comprar sem precisar ter contato com funcionários, e saber em tempo real o valor de sua compra. Ao ler o código e adicionar os produtos diretamente ao seu carrinho, e no final da compra apenas fazer conferencia dos itens e empacotamento para então finalizar o pagamento.
 
+React Web App desenvolvido durante a maratona de programação organizada pelo grupo Pereira: Hack-a-feira. 
+
 ## Funcionalidades Principais
 Por enquanto temos
 * login, 
